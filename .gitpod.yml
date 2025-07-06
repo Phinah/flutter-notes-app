@@ -2,9 +2,13 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: git config --global user.email "you@example.com" && git config --global user.name "Your Name"
-  - init: flutter precache && flutter pub get
-    command: flutter run -d chrome
+  - init: |
+      git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
+      flutter precache
+      flutter pub get
+    command: |
+      flutter run -d chrome
 
 ports:
   - port: 5000
